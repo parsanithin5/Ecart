@@ -4,7 +4,7 @@ import axios from "axios";
 const Mobiles = ()=>{
     const [laptops,setLaptops] = useState([]);
     const get_laptops = async ()=>{
-        const res = await axios.get("http://localhost:9001/mobiles");
+        const res = await axios.get("http://localhost:9011/mobiles");
         const {data} = res;
         setLaptops(data);
     }

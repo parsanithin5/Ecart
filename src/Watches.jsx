@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import "./Laptops.css";
+import './Laptops.css';
 import axios from "axios";
-const Laptops = ()=>{
+const Watches = ()=>{
     const [laptops,setLaptops] = useState([]);
     const get_laptops = async ()=>{
-        const res = await axios.get("http://localhost:9011/laptops");
+        const res = await axios.get("http://localhost:9011/watches");
         const {data} = res;
         setLaptops(data);
     }
@@ -19,7 +19,7 @@ const Laptops = ()=>{
                     return(
                         <div className="child">
                             <img src={element.pimage}></img>
-                            <h2><i className="fa fa-ruppee"></i> {element.pcost}</h2>
+                            <h2><i className="fa fa-rupee"></i> {element.pcost}</h2>
                             <p>Qty: {element.pqty}</p>
                         </div>
                     )
@@ -28,4 +28,4 @@ const Laptops = ()=>{
         </>
     )
 }
-export default Laptops;
+export default Watches;
