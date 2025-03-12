@@ -17,7 +17,7 @@ const ProductList = ({ endpoint }) => {
                 <div key={product.id} className="child" onClick={() => navigate(`/product/${endpoint}/${product.id}`)}>
                     <img src={product.pimage} alt={product.pname} />
                     <h2><i className="fa fa-rupee"></i> {product.pcost}</h2>
-                    <p>Qty: {product.qty}</p>
+                    <p>Qty: {product.pqty}</p>
                 </div>
             ))}
         </div>
