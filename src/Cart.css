@@ -33,3 +33,24 @@
 .cart-item button:hover {
     background: darkred;
 }
+
+.cart-back {
+    background: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-bottom: 10px;
+}
+
+.cart-back:hover {
+    background: #0056b3;
+}
+
+
+
+
+
+
