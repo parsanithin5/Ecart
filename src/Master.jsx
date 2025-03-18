@@ -6,6 +6,8 @@ import { Laptops, Mobiles, Watches } from "./ProductList";
 import ProductDetails from "./ProductDetails";
 import Error from "./Error";
 import Cart from "./Cart"; // Import Cart Page
+import UserDetails from "./UserDetails"; // Import UserDetails Page
+import CartPayment from "./CartPayment"; // Import CartPayment Page
 
 const Master = () => {
     return (
@@ -21,6 +23,9 @@ const Master = () => {
                     <Route path="/product/:type/:id" element={<ProductDetails />} />
                     <Route path="/cart" element={<Cart />} />
                     <Route path="/error" element={<Error />} />
+                    <Route path="/user-details" element={<UserDetails />} />
+                    <Route path="/cart-payment" element={<CartPayment />} />
+
                 </Routes>
             </BrowserRouter>
         </CartProvider>
