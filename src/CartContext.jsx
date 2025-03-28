@@ -12,7 +12,7 @@ export const CartProvider = ({ children }) => {
             if (existingItem) {
                 return prevCart.map(item => 
                     item.uniqueKey === uniqueKey
-                        ? { ...item, quantity: item.quantity + quantity }
+                        ? { ...item, quantity } // replace with latest quantity
                         : item
                 );
             }

@@ -16,11 +16,35 @@ const Login = () => {
       return;
     }
 
-    if (uname.current.value === "mru" && upwd.current.value === "mru@123") {
-      navigate("/dashboard");
-    } else {
-      setError("Invalid username or password");
-    }
+    fetch('http://localhost:9011/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        username: uname.current.value,
+        password: upwd.current.value
+      })
+    })
+    .then(res => {
+      if (!res.ok) throw new Error("Invalid username or password");
+      return res.json();
+    })
+    .then(data => {
+      sessionStorage.setItem("token", data.token);
+      sessionStorage.setItem("role", data.role);
+
+      if (data.role === "ROLE_USER") {
+        navigate("/dashboard");
+      } else if (data.role === "ROLE_ADMIN") {
+        navigate("/admin-dashboard"); // Create this route/component separately
+      } else {
+        setError("Unknown user role");
+      }
+    })
+    .catch(err => {
+      setError(err.message);
+    });
   };
 
   return (
